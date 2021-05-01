@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HFIT.Views.Login">
+    <ContentPage.Content>
+        <Frame  BackgroundColor="{StaticResource Green}" CornerRadius="10" Margin="30" HasShadow="true" >
+            <StackLayout>
+                <Label Text="HFIT" Style="{StaticResource Title}"></Label>
+                <BoxView  Color="#D7CCFF" HeightRequest="1"/>
+                <Image/>
+
+                <Grid VerticalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2" >
+                        <Entry x:Name ="txtEmail" Placeholder="E-mail"  ReturnType="Next"/>
+                    </Frame>
+                    <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2"  >
+                        <Entry x:Name="txtPassword" Placeholder="Senha"  IsPassword="True" ReturnType="Done"/>
+                    </Frame>
+                    <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
+                    <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
+
+                </Grid>
+
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
