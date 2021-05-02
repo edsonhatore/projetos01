@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HFIT.Views.WorkoutDetails">
+    <ContentPage.Content  >
+        <StackLayout>
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>
+                <Label Text="HFIT" Style="{StaticResource Title}" Grid.Column="1"></Label>
+            </Grid>
+
+            <BoxView  Color="#D7CCFF" HeightRequest="1"/>
+            <ScrollView>
+                <StackLayout>
+                    <Frame>
+                        <Label  Style="{StaticResource Title}" >
+                            <Label.FormattedText >
+                                <FormattedString>
+                                    <Span Text="TREINO: "  />
+                                    <Span Text="TRENOME=A" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Frame>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <!--<Label Text="{Binding Company}" Style="{StaticResource TextSecondary}" />
+                        <Label Text="{Binding JobTitle}" Style="{StaticResource TextPrimary}" Grid.Row="1" />
+                        <Label Text="{Binding CityState}"  Style="{StaticResource TextSecondary}" Grid.Row="2"/>-->
+                        <!--<Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{Binding InitialSalary}" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text="-" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text="{Binding FinalSalary}" Style="{StaticResource MoneyLabel}" />
+                                    <Span Text=" BRL" Style="{StaticResource CurrencyLabel}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>-->
+
+
+                        <!--<Label Text="TISCARGA=CARGA" Style="{StaticResource TextPrimary}" Grid.Row="1"  />
+                        <Label Text="TISTEMPO=TEMPO" Style="{StaticResource TextPrimary}" Grid.Row="2"  />-->
+
+                        <!--<Label Text="TRENOME=A" Style="{StaticResource TextSecondary}" />
+                        <Label Text="EXENOME=EXERCICO" Style="{StaticResource TextPrimary}" Grid.Row="3" />
+                        <Label Text="TISINSTRUCAO=DETALHES DA INSTRUCAO"  Style="{StaticResource TextSecondary}" Grid.Row="4"/>-->
+
+
+
+
+                        <!--<Label Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Style="{StaticResource TextPrimary}" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Pub. " />
+                                    <Span Text="{Binding PublicationDate, StringFormat='{0:dd/MM/yyyy}'}" />
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>-->
+
+
+                    </Grid>
+                    <Label Style="{StaticResource TitlePrimary}" Text="Carga:" />
+                    <!--<Label  Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TexCarga" />-->
+                    <Label  Style="{StaticResource TextPrimary}" Text="30" x:Name="TexWeight" />
+
+                    <Label Style="{StaticResource TitlePrimary}" Text="Tempo:" />
+                    <!--<Label  Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TexTime" />-->
+                    <Label  Style="{StaticResource TextPrimary}" Text="25" x:Name="TexTime" />
+                    <Label Style="{StaticResource TitlePrimary}" Text="Exercício:" />
+                    <!--<Label  Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TexWorkout" />-->
+                    <Label  Style="{StaticResource TextPrimary}" Text="PULL OVER" x:Name="TexWorkout" />
+                    <Label Style="{StaticResource TitlePrimary}" Text="Instruções:" />
+                    <!--<Label  Style="{StaticResource TextPrimary}" Text="{Binding CompanyDescription}" x:Name="TexDetails" />-->
+                    <Label  Style="{StaticResource TextPrimary}" Text="3 SERIES DE 30 KGS COM 30 SEGUNDOS DE INTERVALO DDDDDASDSADSADAKPÓDÁPSODP'WOD'PWOE'PLÇAKFODFOROJFISJFD" x:Name="TexDetails" />
+
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
