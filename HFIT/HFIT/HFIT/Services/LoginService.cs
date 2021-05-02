@@ -33,34 +33,38 @@ namespace HFIT.Services
      
                 response = await _client.PostAsync($"{BaseApiurl}api/Login/Login?model={inputs}", content);
 
-
-
                 var msg = new Message<UsersModel>();
-             //  UsersModel user = null;
+               UsersModel user = null;
             if (response.IsSuccessStatusCode)
 
             {
 
                     msg = response.Content.ReadAsAsync<Message<UsersModel>>().Result;
 
-                    App.Current.Properties.Add("MyToken", JsonConvert.SerializeObject(msg.accessToken));
+                    App.Current.Properties.Add("MyToken", msg.accessToken);
                     await App.Current.SavePropertiesAsync();
 
                     var myToken = App.Current.Properties["MyToken"].ToString();
 
-                    //   App.Current.Properties.Remove("MyToken");
-                    //   await App.Current.SavePropertiesAsync();
+                      _client.DefaultRequestHeaders.Authorization =
+                                new AuthenticationHeaderValue("Bearer",  msg.accessToken);
+
+                    //  _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + msg.accessToken);
 
 
-                    // gravar em var publica o token que sera usado em todas as operacçoes
 
-                    
-                    dynamic _token = myToken;
-                    _client.DefaultRequestHeaders.Authorization =
-                              new AuthenticationHeaderValue("Bearer", @myToken);
-                  
                     // buscar os dados do usuario
                     response = await _client.GetAsync($"{BaseApiurl}api/user/GetUserById?id=999");
+
+                   
+                    if ( response.IsSuccessStatusCode !=true )
+                      {
+
+                        App.Current.Properties.Remove("MyToken");
+                        await App.Current.SavePropertiesAsync();  
+                         
+                    }
+
 
                 }
 

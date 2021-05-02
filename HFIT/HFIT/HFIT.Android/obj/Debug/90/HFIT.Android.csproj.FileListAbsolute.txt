@@ -537,11 +537,6 @@ C:\DEV\APPHFIT\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\assets\ZAMIO.Model2.d
 C:\DEV\APPHFIT\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\assets\ZAMIO.Model2.pdb
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\HFIT.Android.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\HFIT.Android.pdb
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.companyname.hfit.apk
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.companyname.hfit.aab
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.companyname.hfit-Signed.aab
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.companyname.hfit-Signed.apk
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.companyname.hfit-Signed.apk.idsig
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\HFIT.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\ZAMIO.Model2.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\HFIT.pdb
@@ -570,10 +565,7 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\HFIT.Android.cspro
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\HFIT.Android.csproj.CopyComplete
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\HFIT.Android.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\HFIT.Android.pdb
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.companyname.hfit.apk
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\base.zip
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.companyname.hfit.aab
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.companyname.hfit.apks
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\res\layout\tabbar.xml
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\res\layout\toolbar.xml
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\res\values\styles.xml
@@ -1043,7 +1035,6 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\src\mono\a
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\src\mono\MonoPackageManager_Resources.java
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\src\xamarin\essentials\fileProvider.java
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\packaged_resources
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\src\com\companyname\hfit\R.java
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\compressed_assemblies.arm64-v8a.s
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\compressed_assemblies.armeabi-v7a.s
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\compressed_assemblies.x86.s
@@ -1072,3 +1063,12 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_ConvertReso
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.br.ehatore.hfit.apk
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.br.ehatore.hfit.aab
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.br.ehatore.hfit-Signed.aab
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.br.ehatore.hfit-Signed.apk
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\bin\Debug\com.br.ehatore.hfit-Signed.apk.idsig
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.br.ehatore.hfit.apk
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.br.ehatore.hfit.aab
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\bin\com.br.ehatore.hfit.apks
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\android\src\com\br\ehatore\hfit\R.java
