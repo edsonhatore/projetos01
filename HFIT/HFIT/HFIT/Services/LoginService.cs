@@ -16,11 +16,13 @@ namespace HFIT.Services
         {
 
             UsersModel inputs = new UsersModel();
+            UserService userService = new UserService();
+           
+            var respostaUser = new Message<UsersModel>();
 
-           inputs.Id =999;
-            inputs.Name = "EDSON";
-            inputs.Senha = "1";
-            inputs.EmailId = "teste@teste22";
+            inputs.Id =0;
+              inputs.Senha = pass;// "1";
+            inputs.EmailId = email; //"teste@teste22";
 
            HttpResponseMessage response = null; //Declaring an http response message
 
@@ -30,45 +32,37 @@ namespace HFIT.Services
             try
             {
                 //usar ocalhost nao funciona pois localhost e o emulador 
-     
+                // busca token
                 response = await _client.PostAsync($"{BaseApiurl}api/Login/Login?model={inputs}", content);
 
-                var msg = new Message<UsersModel>();
-               UsersModel user = null;
+                var respostaLogin = new Message<UsersModel>();
+            
             if (response.IsSuccessStatusCode)
+                {
+                    // converte retorno na classe de mensagem
+                    respostaLogin = response.Content.ReadAsAsync<Message<UsersModel>>().Result;
 
-            {
-
-                    msg = response.Content.ReadAsAsync<Message<UsersModel>>().Result;
-
-                    App.Current.Properties.Add("MyToken", msg.accessToken);
+                    // grava o token na app
+                    App.Current.Properties.Add("MyToken", respostaLogin.accessToken);
                     await App.Current.SavePropertiesAsync();
 
-                    var myToken = App.Current.Properties["MyToken"].ToString();
 
-                      _client.DefaultRequestHeaders.Authorization =
-                                new AuthenticationHeaderValue("Bearer",  msg.accessToken);
+                    respostaUser = await userService.GetUser(respostaLogin.Id, respostaLogin.accessToken);
 
-                    //  _client.DefaultRequestHeaders.Add("Authorization", "Bearer " + msg.accessToken);
-
-
-
-                    // buscar os dados do usuario
-                    response = await _client.GetAsync($"{BaseApiurl}api/user/GetUserById?id=999");
-
-                   
-                    if ( response.IsSuccessStatusCode !=true )
-                      {
-
-                        App.Current.Properties.Remove("MyToken");
-                        await App.Current.SavePropertiesAsync();  
-                         
+                    if (respostaUser.Data.EmailId != null)
+                    {
+                        return respostaUser.Data;
                     }
+                    else
+                    {
+                        return respostaUser.Data;
 
-
+                    }
+                    
                 }
 
-                return inputs;
+                return respostaUser.Data;
+
             }
             catch (Exception ex)
             {

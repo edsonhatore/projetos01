@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sEckSJGQDNepsoZHSPrkw11/7+P+tgbTbrcbzOF9hsfEvX0xvINXZNlI1VmFfdTBeAmLe0TrlmHon6SCW2832A==",
+  "dgSpecHash": "Vti4ec+Gh/Fc1CUtXb6M+qiactZW5whYrv2SLbWsELPkqO7InefG0slpS1bpeifXOk+GWNAS4oyimTJj7/5M8g==",
   "success": true,
   "projectFilePath": "C:\\DEV\\APPHFIT\\projetos01\\HFIT\\HFIT\\HFIT.Android\\HFIT.Android.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\edson\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\edson\\.nuget\\packages\\rg.plugins.popup\\2.0.0.11\\rg.plugins.popup.2.0.0.11.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",

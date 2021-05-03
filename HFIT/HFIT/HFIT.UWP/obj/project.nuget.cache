@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VOt6lQesC6wBpOSguo8FnUUCjwdzTtbuye9MejWeKq2uy5PrpMeu3Cj8juyUzKThcnFgZSs8v/t1faWqq0kaQg==",
+  "dgSpecHash": "myBrd+XSmYvgoHC92JXjXuZKTf9egohe8trRB+Br/RDfYYfM7BosL8EnwIoxpUrRbN62dvwSQJsRmEntsKSoQQ==",
   "success": true,
   "projectFilePath": "C:\\DEV\\APPHFIT\\projetos01\\HFIT\\HFIT\\HFIT.UWP\\HFIT.UWP.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\edson\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\edson\\.nuget\\packages\\rg.plugins.popup\\2.0.0.11\\rg.plugins.popup.2.0.0.11.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\runtime.any.system.collections\\4.3.0\\runtime.any.system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\runtime.any.system.diagnostics.tools\\4.3.0\\runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\runtime.any.system.globalization\\4.3.0\\runtime.any.system.globalization.4.3.0.nupkg.sha512",

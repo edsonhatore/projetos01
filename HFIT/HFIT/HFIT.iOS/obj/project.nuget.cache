@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "N548vWsswx7soM6rFom+NXhxfMbNPAAOz1/OiE2Nz95tOnXkNlGfnMnCAuCIasAByBh0d8wc91sK1pxAgf+d0A==",
+  "dgSpecHash": "gnvYycg6LBOvGDgvoIJD2kLEJ2a5/802kvetkC7yuOSKQABOTVFfPxOFlIA1yVFmkpUECW19PI7rnHSYF0K3EQ==",
   "success": true,
   "projectFilePath": "C:\\DEV\\APPHFIT\\projetos01\\HFIT\\HFIT\\HFIT.iOS\\HFIT.iOS.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\edson\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\edson\\.nuget\\packages\\rg.plugins.popup\\2.0.0.11\\rg.plugins.popup.2.0.0.11.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",

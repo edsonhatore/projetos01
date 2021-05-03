@@ -27,7 +27,6 @@
                     </Frame>
                     <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
                     <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
-
                 </Grid>
 
             </StackLayout>

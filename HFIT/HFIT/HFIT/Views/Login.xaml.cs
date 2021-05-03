@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HFIT.Utility.Load;
+using Rg.Plugins.Popup.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,8 +26,11 @@ namespace HFIT.Views
         private async void GoWorkout(object sender, EventArgs e)
         {
             UsersModel user;
+            await Navigation.PushPopupAsync(new Loading());
 
             user = await _service.Login(txtEmail.Text, txtPassword.Text);
+
+            await Navigation.PushPopupAsync(new Loading());
 
             App.Current.MainPage = new NavigationPage(new Workout());
         }

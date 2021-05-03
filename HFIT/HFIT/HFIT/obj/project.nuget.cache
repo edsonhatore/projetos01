@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hb7y8d3FZoLhwT3b1Mj9yJPkBOMqkighjg9sO5L4R51j7YYQLWvYzfXi9gTiIqES9Uz6rVLkSJoeO6wyzLMZ3g==",
+  "dgSpecHash": "wlYgEa8KsQnT9glRuSl9XKAwbKekgBR30qa2IYiLrTDvOQsIEFsRXZdPHoEKg95wuCkugxmD7+gYMcbbQ2Cz4A==",
   "success": true,
   "projectFilePath": "C:\\DEV\\APPHFIT\\projetos01\\HFIT\\HFIT\\HFIT\\HFIT.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\edson\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json\\10.0.1\\newtonsoft.json.10.0.1.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
+    "C:\\Users\\edson\\.nuget\\packages\\rg.plugins.popup\\2.0.0.11\\rg.plugins.popup.2.0.0.11.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\edson\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",

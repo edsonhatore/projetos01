@@ -2,8 +2,8 @@
 	.section	.rodata.env.str.1,"aMS",@progbits,1
 	.type	.L.env.str.1, @object
 .L.env.str.1:
-	.asciz	"com.br.ehatore.hfit"
-	.size	.L.env.str.1, 20
+	.asciz	"com.companyname.hfit"
+	.size	.L.env.str.1, 21
 	.section	.data.application_config,"aw",@progbits
 	.type	application_config, @object
 	.p2align	2
@@ -71,7 +71,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"8436212f-601f-41a8-a308-b7fb3924fc06"
+	.asciz	"d9d642a5-38b1-4df3-b13d-2befc0a8b0e5"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object
