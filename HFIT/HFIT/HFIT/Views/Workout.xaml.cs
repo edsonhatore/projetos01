@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZAMIO.Model2;
 
 namespace HFIT.Views
 {
@@ -27,7 +28,49 @@ namespace HFIT.Views
 
         }
 
-        private void CheckedChangedAction(object sender, CheckedChangedEventArgs e)
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            UsersModel user = ((UsersModel)BindingContext);
+
+
+          
+            //if (string.IsNullOrEmpty(user.CompanyDescription))
+            //{
+            //    if (responseservice.isSucess)
+            //    {
+
+            //        _listOfJob = new ObservableCollection<Domain.Model.Job>(responseservice.Data);
+            //        _listOfJobFirstreq = _listOfJob.Count;
+            //        // carrega a colectio view 
+            //        ListofJob.ItemsSource = _listOfJob;
+
+            //        ListofJob.RemainingItemsThreshold = 1;
+
+            //        txtResultaCount.Text = $"{ responseservice.Pagination.TotalItems} resultado(s).";
+            //    }
+            //    else
+            //    {
+
+            //        await DisplayAlert("Erro!", "Erro inesperado", "OK");
+
+            //    }
+
+
+
+            //}
+
+            //if (string.IsNullOrEmpty(job.JobDescription))
+            //{
+            //    HeaderJobDescription.IsVisible = false;
+            //    TextJobDescription.IsVisible = false;
+
+
+            //}
+        }
+
+            private void CheckedChangedAction(object sender, CheckedChangedEventArgs e)
         {
 
         }

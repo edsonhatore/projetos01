@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -10,12 +11,14 @@ namespace HFIT.Services
 {
     public class UserService : Service
     {
-       public async Task<Message<UsersModel>> GetUser(int Id, string myToken)
+       public async Task<Message<List<UsersModel>>> GetUser(int Id, string myToken)
             //  public async Task<UsersModel> GetUser(int Id, string myToken)
         {
 
                HttpResponseMessage response = null; //Declaring an http response message
-            var responseService = new Message<UsersModel>();
+           var responseService = new Message<List<UsersModel>>();
+          //  var vUsuario = new UsersModel();
+
           
             try
             {                   
@@ -23,15 +26,22 @@ namespace HFIT.Services
                     _client.DefaultRequestHeaders.Authorization =
                                new AuthenticationHeaderValue("Bearer", myToken);
 
-                    // buscar os dados do usuario
-                    response = await _client.GetAsync($"{BaseApiurl}api/user/GetUserById?id={Id}");
+                // buscar os dados do usuario
+             
+                 response = await _client.GetAsync($"{BaseApiurl}api/user/GetUserById?id={Id}");
+                responseService.IsSuccess = response.IsSuccessStatusCode;
+               
 
-                responseService.Data = response.Content.ReadAsAsync<UsersModel>().Result;
-
+                responseService.Data =  await response.Content.ReadAsAsync<List<UsersModel>>();
+               
                 if (response.IsSuccessStatusCode != true)
                     {   App.Current.Properties.Remove("MyToken");
                         await App.Current.SavePropertiesAsync();
-                   
+
+                    string problemResponse = await response.Content.ReadAsStringAsync();
+                    var erros = JsonConvert.DeserializeObject<Message<UsersModel>>(problemResponse);
+
+                    responseService.ReturnMessage = erros.ReturnMessage;                  
                 }
 
                 return responseService;

@@ -12,17 +12,17 @@ namespace HFIT.Services
 {
     public class LoginService :Service
     {
-        public async Task<UsersModel> Login(string email , string pass)
+        public async Task<Message<List<UsersModel>>> Login(string email , string pass)
         {
 
             UsersModel inputs = new UsersModel();
             UserService userService = new UserService();
            
-            var respostaUser = new Message<UsersModel>();
+            var respostaUser = new Message<List<UsersModel>>();
 
-            inputs.Id =0;
-              inputs.Senha = pass;// "1";
-            inputs.EmailId = email; //"teste@teste22";
+            inputs.Id =999;
+              inputs.Senha = "1";
+            inputs.EmailId = "teste@teste22";
 
            HttpResponseMessage response = null; //Declaring an http response message
 
@@ -49,19 +49,19 @@ namespace HFIT.Services
 
                     respostaUser = await userService.GetUser(respostaLogin.Id, respostaLogin.accessToken);
 
-                    if (respostaUser.Data.EmailId != null)
-                    {
-                        return respostaUser.Data;
-                    }
-                    else
-                    {
-                        return respostaUser.Data;
+                    //if (respostaUser.Data.EmailId != null)
+                    //{
+                    //    return respostaUser;
+                    //}
+                    //else
+                    //{
+                    //    return respostaUser;
 
-                    }
+                    //}
                     
                 }
 
-                return respostaUser.Data;
+                return respostaUser;
 
             }
             catch (Exception ex)

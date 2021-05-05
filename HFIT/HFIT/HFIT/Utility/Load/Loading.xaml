@@ -4,5 +4,5 @@
                    xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
                    CloseWhenBackgroundIsClicked="False"
              x:Class="HFIT.Utility.Load.Loading">
-    <ActivityIndicator IsRunning="True" Color="{StaticResource Purple}" HorizontalOptions="Center" WidthRequest="100"/>
+    <ActivityIndicator IsRunning="True" Color="{StaticResource DarkGray}" HorizontalOptions="Center" WidthRequest="100"/>
 </popup:PopupPage>

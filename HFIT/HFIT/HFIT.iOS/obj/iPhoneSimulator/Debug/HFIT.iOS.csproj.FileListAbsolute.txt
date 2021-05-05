@@ -124,3 +124,5 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.csproj.CopyComplete
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.exe
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.pdb
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb
