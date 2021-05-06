@@ -24,7 +24,11 @@ namespace HFIT.Services
               inputs.Senha = "1";
             inputs.EmailId = "teste@teste22";
 
-           HttpResponseMessage response = null; //Declaring an http response message
+            App.Current.Properties.Remove("MyToken");
+            await App.Current.SavePropertiesAsync();
+
+
+            HttpResponseMessage response = null; //Declaring an http response message
 
             var jsonRequest = JsonConvert.SerializeObject(inputs); // converting the obj into  a JSON object
 

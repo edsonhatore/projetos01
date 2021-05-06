@@ -13,9 +13,13 @@ namespace HFIT.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Workout : ContentPage
     {
-        public Workout()
+
+        public UsersModel UserLogado { get; set; }
+        public Workout(UsersModel user)
         {
             InitializeComponent();
+             UserLogado = user; 
+
         }
 
         private void OpenDetails(object sender, EventArgs e)
@@ -28,14 +32,16 @@ namespace HFIT.Views
 
         }
 
+       
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            UsersModel user = ((UsersModel)BindingContext);
+            UsersModel user = UserLogado;
 
 
-          
+
             //if (string.IsNullOrEmpty(user.CompanyDescription))
             //{
             //    if (responseservice.isSucess)

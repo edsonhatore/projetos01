@@ -25,7 +25,7 @@ namespace HFIT.Views
 
         private async void GoWorkout(object sender, EventArgs e)
         {
-            UsersModel user;
+            UsersModel user = new UsersModel();
             var respostaUser = new Message<List<UsersModel>>();
             
 
@@ -35,24 +35,24 @@ namespace HFIT.Views
             respostaUser = await _service.Login(txtEmail.Text, txtPassword.Text);
 
             //    await Navigation.PushPopupAsync(new Loading());
-
+            for (var i = 0; i < respostaUser.Data.Count; i++)
+            { 
+            user=  respostaUser.Data[i];
+              
+            }
+                      
 
             if (respostaUser.IsSuccess)
             {
-                var eventArgs = (EventArgs)e;
-                var page = new Workout();
-             //   page.BindingContext = eventArgs.LoadFromXaml<e>;
-
-              //  Navigation.PushAsync(page);
+                App.Current.MainPage = new NavigationPage(new Workout(user));
             }
             else
             {
 
                 await DisplayAlert("Erro!", "Erro inesperado", "OK");
-             
+
             }
 
-            App.Current.MainPage = new NavigationPage(new Workout());
         }
 
      

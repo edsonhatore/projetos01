@@ -12,7 +12,8 @@ namespace HFIT
 
             if (App.Current.Properties.ContainsKey("MyToken"))
             {
-                MainPage = new NavigationPage(new Views.Workout());
+                //MainPage = new NavigationPage(new Views.Workout());
+                MainPage = new NavigationPage(new Views.Login());
 
             }
             else
