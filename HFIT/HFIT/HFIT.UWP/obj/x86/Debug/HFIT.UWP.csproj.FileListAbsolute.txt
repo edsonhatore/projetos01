@@ -82,6 +82,8 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\HFIT.UWP.build.appxre
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\System.Net.Http.Formatting.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Newtonsoft.Json.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Newtonsoft.Json.Bson.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Rg.Plugins.Popup.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Rg.Plugins.Popup.pdb
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\System.Runtime.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Microsoft.Graphics.Canvas.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Microsoft.Graphics.Canvas.winmd
@@ -138,5 +140,3 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\obj\x86\Debug\MultipleQualifiersPer
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\obj\x86\Debug\ProjectArchitectures.txt
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636160787180000000.json
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885418160000000.json
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Rg.Plugins.Popup.dll
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.UWP\bin\x86\Debug\Rg.Plugins.Popup.pdb

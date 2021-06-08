@@ -20,10 +20,12 @@ namespace HFIT.Services
            
             var respostaUser = new Message<List<UsersModel>>();
 
-            inputs.Id =999;
+            inputs.Id =9998;
               inputs.Senha = "1";
             inputs.EmailId = "teste@teste22";
+            inputs.Name = "edson22";
 
+            App.Current.Properties.Clear();
             App.Current.Properties.Remove("MyToken");
             await App.Current.SavePropertiesAsync();
 
@@ -39,31 +41,36 @@ namespace HFIT.Services
                 // busca token
                 response = await _client.PostAsync($"{BaseApiurl}api/Login/Login?model={inputs}", content);
 
-                var respostaLogin = new Message<UsersModel>();
-            
-            if (response.IsSuccessStatusCode)
+               
+                if (response.IsSuccessStatusCode)
                 {
+                    var respostaLogin = new Message<UsersModel>();
+
                     // converte retorno na classe de mensagem
                     respostaLogin = response.Content.ReadAsAsync<Message<UsersModel>>().Result;
-
+                   
                     // grava o token na app
                     App.Current.Properties.Add("MyToken", respostaLogin.accessToken);
-                    await App.Current.SavePropertiesAsync();
+                   await App.Current.SavePropertiesAsync();
 
 
                     respostaUser = await userService.GetUser(respostaLogin.Id, respostaLogin.accessToken);
 
-                    //if (respostaUser.Data.EmailId != null)
-                    //{
-                    //    return respostaUser;
-                    //}
-                    //else
-                    //{
-                    //    return respostaUser;
-
-                    //}
-                    
+                   
                 }
+                else
+                {
+                 
+
+                    //string problemResponse = await response.Content.ReadAsStringAsync();
+                    //var erros = JsonConvert.DeserializeObject<Message<UsersModel>>(problemResponse);
+                  //  respostaUser.ReturnMessage =  erros.ReturnMessage;
+
+                    respostaUser.IsSuccess = false;
+                    respostaUser.ReturnMessage = response.StatusCode.ToString() + " - " + response.ReasonPhrase.ToString();
+
+                }
+                
 
                 return respostaUser;
 

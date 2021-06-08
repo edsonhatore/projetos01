@@ -59,7 +59,7 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OpenDetails" />
                         </Frame.GestureRecognizers>
-                        <Label Text="14/04/2021"  Style="{StaticResource Date}"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                        <Label x:Name ="DiaDaSemana"  Style="{StaticResource Date}"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     </Frame>
                 </Grid>
 
@@ -71,26 +71,27 @@
                         <CollectionView x:Name="CVListaDeTarefas" EmptyView="Nenhuma tarefa">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
-                                    <SwipeView BackgroundColor="White">
+                                    <!--<SwipeView BackgroundColor="White">
                                         <SwipeView.RightItems>
                                             <SwipeItems>
                                                 <SwipeItem BackgroundColor="#EE6C4D" Text="Concluir" Invoked="BtnDone" CommandParameter="{Binding .}" />
                                             </SwipeItems>
-                                        </SwipeView.RightItems>
+                                        </SwipeView.RightItems>-->
                                         <Grid Padding="0, 10">
                                             <Grid.ColumnDefinitions>
                                                 <ColumnDefinition Width="50" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
-                                            <CheckBox Color="{StaticResource Green}" IsChecked="{Binding Finalizada}" CheckedChanged="CheckedChangedAction" />
-                                            <Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">
-                                                <Label.GestureRecognizers>
+                                            <CheckBox Color="{StaticResource Green}" IsChecked="True"  CheckedChanged="CheckedChangedAction" />
+                                            <!--<Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">-->
+                                            <Label x:Name="LblTarefaDetalhe" Text="{Binding TRENOME}" Grid.Column="1" LineHeight="1.2">
+                                                    <Label.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="BtnViews" CommandParameter="{Binding .}" />
                                                 </Label.GestureRecognizers>
                                                 <Label.FormattedText>
                                                     <FormattedString>
-                                                        <Span Text="{Binding Nome}" Style="{StaticResource TituloNomeTarefa}" />
+                                                        <Span Text="{Binding TRENOME}" Style="{StaticResource TitlePrimary}" />
                                                         <Span Text="&#10;" />
                                                         <!--<Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />
                                                     <Span Text=" - "  Style="{StaticResource Horario}" />
@@ -99,7 +100,7 @@
                                                 </Label.FormattedText>
                                             </Label>
                                         </Grid>
-                                    </SwipeView>
+                                    <!--</SwipeView>-->
                                 </DataTemplate>
                             </CollectionView.ItemTemplate>
                         </CollectionView>

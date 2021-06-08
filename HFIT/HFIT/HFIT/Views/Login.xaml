@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HFIT.Views.Login">
     <ContentPage.Content>
-        <Frame  BackgroundColor="{StaticResource Green}" CornerRadius="10" Margin="30" HasShadow="true" >
-            <StackLayout>
-                <Label Text="HFIT" Style="{StaticResource Title}"></Label>
+        <!--<Frame  BackgroundColor="{StaticResource LightBlue}" CornerRadius="10" Margin="30" HasShadow="true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
+        <StackLayout  BackgroundColor="{StaticResource LightBlue}">
+                <Label Text="HFIT-Sonian" Style="{StaticResource  Date}" Margin="15"></Label>
                 <BoxView  Color="#D7CCFF" HeightRequest="1"/>
                 <Image/>
-
                 <Grid VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -19,17 +18,17 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2" >
-                        <Entry x:Name ="txtEmail" Placeholder="E-mail"  ReturnType="Next"/>
+                <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2" >
+                    <Entry x:Name ="txtEmail" Placeholder="E-mail"  ReturnType="Next"/>
                     </Frame>
                     <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2"  >
-                        <Entry x:Name="txtPassword" Placeholder="Senha"  IsPassword="True" ReturnType="Done"/>
+                        <Entry x:Name="txtPassword" Placeholder="Senha"  IsPassword="True" ReturnType="Done" />
                     </Frame>
-                    <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
-                    <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource LightBlue}"  TextColor="#FFFFFF"/>
+                    <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource DarkGrayBlue}"  CornerRadius="10"  TextColor="#FFFFFF"/>
+                    <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource DarkGrayBlue}" FontSize="12"  CornerRadius="10"   TextColor="#FFFFFF"/>
                 </Grid>
 
             </StackLayout>
-        </Frame>
+        <!--</Frame>-->
     </ContentPage.Content>
 </ContentPage>

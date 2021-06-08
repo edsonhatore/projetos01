@@ -11,21 +11,48 @@ namespace HFIT.Converter
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Boolean valor = (Boolean)value;
+            try
+            {
+                Boolean valor = (string)value == "SIM" ? true : false;
+                // Boolean valor = true ;
 
-            if (valor)
-            {
-                return TextDecorations.Strikethrough;
+                if (valor)
+                {
+                    return TextDecorations.Strikethrough;
+                }
+                else
+                {
+                    return TextDecorations.None;
+                }
             }
-            else
+            catch (Exception)
             {
-                return TextDecorations.None;
+
+                throw;
             }
+           
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
+        }
+
+        public bool ConvertTextToBool(string value, CultureInfo culture)
+        {
+            try
+            {
+                Boolean valor = (string)value == "SIM" ? true : false;
+                // Boolean valor = true ;
+                return valor;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 }

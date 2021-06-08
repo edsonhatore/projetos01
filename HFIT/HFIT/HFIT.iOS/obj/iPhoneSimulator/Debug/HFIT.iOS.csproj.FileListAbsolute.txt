@@ -66,6 +66,8 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\HFIT.iOS.
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\System.Net.Http.Formatting.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Newtonsoft.Json.Bson.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.pdb
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
@@ -124,5 +126,3 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.csproj.CopyComplete
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.exe
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\obj\iPhoneSimulator\Debug\HFIT.iOS.pdb
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.dll
-C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.iOS\bin\iPhoneSimulator\Debug\Rg.Plugins.Popup.pdb

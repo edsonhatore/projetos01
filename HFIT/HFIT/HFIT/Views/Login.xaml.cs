@@ -27,32 +27,47 @@ namespace HFIT.Views
         {
             UsersModel user = new UsersModel();
             var respostaUser = new Message<List<UsersModel>>();
-            
 
+            try
+            {          
 
             //      await Navigation.PushPopupAsync(new Loading());
 
             respostaUser = await _service.Login(txtEmail.Text, txtPassword.Text);
-
-            //    await Navigation.PushPopupAsync(new Loading());
-            for (var i = 0; i < respostaUser.Data.Count; i++)
-            { 
-            user=  respostaUser.Data[i];
-              
-            }
-                      
-
             if (respostaUser.IsSuccess)
             {
-                App.Current.MainPage = new NavigationPage(new Workout(user));
+
+                //    await Navigation.PushPopupAsync(new Loading());
+                for (var i = 0; i < respostaUser.Data.Count; i++)
+                {
+                    user = respostaUser.Data[i];
+
+                }
+
+
+                if (respostaUser.IsSuccess)
+                {
+                    App.Current.MainPage = new NavigationPage(new Workout(user));
+                }
+                else
+                {
+
+                    await DisplayAlert("Erro!", "Erro inesperado.", "OK");
+
+                }
             }
             else
             {
-
-                await DisplayAlert("Erro!", "Erro inesperado", "OK");
+                await DisplayAlert("Erro!", "Erro inesperado: "+ respostaUser.ReturnMessage, "OK");
 
             }
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
      

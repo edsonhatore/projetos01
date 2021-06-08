@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,12 +16,27 @@ namespace HFIT.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Workout : ContentPage
     {
+        public event PropertyChangedEventHandler PropertyChanged;
 
+        private Services.WorkoutService _service;
         public UsersModel UserLogado { get; set; }
+
+    
+
         public Workout(UsersModel user)
         {
             InitializeComponent();
-             UserLogado = user; 
+            _service = new Services.WorkoutService();
+        
+            UserLogado = user;
+
+            AtualizarDataCalendario();
+
+            var idioma = System.Globalization.CultureInfo.CurrentCulture;
+
+
+           DiaDaSemana.Text = PrimeiraLetraMaiuscula(idioma.DateTimeFormat.GetDayName(DateTime.Now.DayOfWeek)) + "-" + DateTime.Now.ToString();
+
 
         }
 
@@ -27,12 +45,82 @@ namespace HFIT.Views
             Navigation.PushAsync(new WorkoutDetails());
         }
 
+
+        private string PrimeiraLetraMaiuscula(string palavra)
+        {
+            return char.ToUpper(palavra[0]) + palavra.Substring(1);
+        }
+
         private void BtnDone(object sender, EventArgs e)
         {
 
         }
 
-       
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            try
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+
+        private ObservableCollection<TreinoModel> _lista;
+        public ObservableCollection<TreinoModel> Lista
+        {
+
+            get
+            {
+                return _lista;
+            }
+            set
+            {
+                _lista = value;
+                NotifyPropertyChanged("Lista");
+            }
+        }
+
+
+        private async void AtualizarDataCalendario()
+        {
+
+            ///pedndente chamar api 
+            ///
+            var treino = new List<TreinoModel>();
+            var respostaTreino = new Message<List<TreinoModel>>();
+
+
+
+            //      await Navigation.PushPopupAsync(new Loading());
+            try
+            {
+                respostaTreino = await _service.GetWorkout(1, App.Current.Properties["MyToken"].ToString());
+
+
+                for (var i = 0; i < respostaTreino.Data.Count; i++)
+                {
+                    treino.Add(respostaTreino.Data[i]);
+                }
+
+                Lista = new ObservableCollection<TreinoModel>(treino);
+
+
+                CVListaDeTarefas.ItemsSource = Lista;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+
+            }
+        }
 
         protected override void OnAppearing()
         {
