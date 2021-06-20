@@ -26,7 +26,9 @@ namespace HFIT.Services
 
                 // buscar os dados do usuario
 
-                response = await _client.GetAsync($"{BaseApiurl}api/Treino/GetAllTreino");
+             //   response = await _client.GetAsync($"{BaseApiurl}api/Treino/GetAllTreino");
+                response = await _client.GetAsync($"{BaseApiurl}api/Treino/GetActiveWorkout?Master=1&Corporacao={1}&Usercodigo={Id}");
+
                 responseService.IsSuccess = response.IsSuccessStatusCode;
 
 
@@ -34,14 +36,17 @@ namespace HFIT.Services
 
                 if (response.IsSuccessStatusCode != true)
                 {
-                  //  App.Current.Properties.Remove("MyToken");
-                   // await App.Current.SavePropertiesAsync();
+                    //  App.Current.Properties.Remove("MyToken");
+                    // await App.Current.SavePropertiesAsync();
 
                     //TODO: ACERTAR A CAPTURA DE ERRO, SERVER INTERNAR ERROR NAO FOI CAPTURADO
-                    string problemResponse = await response.Content.ReadAsStringAsync();
-                    var erros = JsonConvert.DeserializeObject<Message<TreinoModel>>(problemResponse);
 
-                    responseService.errors = erros.errors;
+                    responseService.IsSuccess = false;
+                    responseService.ReturnMessage = response.StatusCode.ToString() + " - " + response.ReasonPhrase.ToString();
+
+                    //string problemResponse = await response.Content.ReadAsStringAsync();
+                    //var erros = JsonConvert.DeserializeObject<Message<TreinoModel>>(problemResponse);
+                    //responseService.errors = erros.errors;
                 }
 
                 return responseService;

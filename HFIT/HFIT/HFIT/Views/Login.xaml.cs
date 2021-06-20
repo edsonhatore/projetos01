@@ -29,38 +29,42 @@ namespace HFIT.Views
             var respostaUser = new Message<List<UsersModel>>();
 
             try
-            {          
-
-            //      await Navigation.PushPopupAsync(new Loading());
-
-            respostaUser = await _service.Login(txtEmail.Text, txtPassword.Text);
-            if (respostaUser.IsSuccess)
             {
+                ActiveLoading.IsRunning = true;
+                ActiveLoading.IsVisible = true;
 
-                //    await Navigation.PushPopupAsync(new Loading());
-                for (var i = 0; i < respostaUser.Data.Count; i++)
-                {
-                    user = respostaUser.Data[i];
-
-                }
-
+                respostaUser = await _service.Login(txtEmail.Text, txtPassword.Text);
 
                 if (respostaUser.IsSuccess)
                 {
-                    App.Current.MainPage = new NavigationPage(new Workout(user));
+
+                    for (var i = 0; i < respostaUser.Data.Count; i++)
+                    {
+                        user = respostaUser.Data[i];
+
+                    }
+
+                    ActiveLoading.IsRunning = false;
+                    ActiveLoading.IsVisible = false;
+
+
+
+                    if (respostaUser.IsSuccess)
+                    {
+                        App.Current.MainPage = new NavigationPage(new Workout(user));
+                    }
+                    else
+                    {
+
+                        await DisplayAlert("Erro!", "Erro inesperado.", "OK");
+
+                    }
                 }
                 else
                 {
-
-                    await DisplayAlert("Erro!", "Erro inesperado.", "OK");
+                    await DisplayAlert("Aviso!",  respostaUser.ReturnMessage, "OK");
 
                 }
-            }
-            else
-            {
-                await DisplayAlert("Erro!", "Erro inesperado: "+ respostaUser.ReturnMessage, "OK");
-
-            }
 
             }
             catch (Exception)
@@ -68,6 +72,12 @@ namespace HFIT.Views
 
                 throw;
             }
+            finally
+            {
+                ActiveLoading.IsRunning = false;
+                ActiveLoading.IsVisible = false;
+            }
+
         }
 
      

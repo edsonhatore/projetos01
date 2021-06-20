@@ -19,11 +19,9 @@ namespace HFIT.Services
             UserService userService = new UserService();
            
             var respostaUser = new Message<List<UsersModel>>();
-
-            inputs.Id =9998;
-              inputs.Senha = "1";
-            inputs.EmailId = "teste@teste22";
-            inputs.Name = "edson22";
+               inputs.Senha =pass;
+            inputs.EmailId = email;
+           
 
             App.Current.Properties.Clear();
             App.Current.Properties.Remove("MyToken");
@@ -48,15 +46,25 @@ namespace HFIT.Services
 
                     // converte retorno na classe de mensagem
                     respostaLogin = response.Content.ReadAsAsync<Message<UsersModel>>().Result;
-                   
-                    // grava o token na app
-                    App.Current.Properties.Add("MyToken", respostaLogin.accessToken);
-                   await App.Current.SavePropertiesAsync();
+
+                    // se login com sucesso
+                    if (respostaLogin.IsSuccess)
+                    {
+                        // grava o token na app
+                        App.Current.Properties.Add("MyToken", respostaLogin.accessToken);
+                        await App.Current.SavePropertiesAsync();
 
 
-                    respostaUser = await userService.GetUser(respostaLogin.Id, respostaLogin.accessToken);
+                        respostaUser = await userService.GetUser(respostaLogin.Id, respostaLogin.accessToken);
 
-                   
+                    }
+                    else
+                    {
+                        respostaUser.IsSuccess = false;
+                        respostaUser.ReturnMessage = respostaLogin.ReturnMessage;
+
+
+                    }
                 }
                 else
                 {

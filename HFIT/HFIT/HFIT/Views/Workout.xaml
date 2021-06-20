@@ -23,7 +23,7 @@
                 </Grid.RowDefinitions>
                 <!--<ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>-->
                 <Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />
-                <Label Text="HFIT" Style="{StaticResource Title}" Grid.Column="1"></Label>
+                <Label Text="HFIT-Sonian" Style="{StaticResource Title}" Grid.Column="1"></Label>
             </Grid>
 
             <BoxView  Color="#D7CCFF" HeightRequest="1"/>
@@ -51,7 +51,7 @@
                             <FormattedString>
                                 <Span Text="Treino"  />
                                 <Span Text="&#10;" />
-                                <Span x:Name="txtWorkout" Text="A"  />
+                                <Span x:Name="txtWorkout" Text=""  />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -59,12 +59,13 @@
                         <Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OpenDetails" />
                         </Frame.GestureRecognizers>
-                        <Label x:Name ="DiaDaSemana"  Style="{StaticResource Date}"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                        <Label x:Name ="DiaDaSemana"  Style="{StaticResource TextSecondary}" FontSize="10"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     </Frame>
                 </Grid>
-
-                <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
-                    <Grid>
+               
+                    <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
+                    <ScrollView>
+                        <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition />
                         </Grid.RowDefinitions>
@@ -91,9 +92,10 @@
                                                 </Label.GestureRecognizers>
                                                 <Label.FormattedText>
                                                     <FormattedString>
-                                                        <Span Text="{Binding TRENOME}" Style="{StaticResource TitlePrimary}" />
+                                                        <Span Text="{Binding EXENOME}" Style="{StaticResource TitlePrimary}" />
                                                         <Span Text="&#10;" />
-                                                        <!--<Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />
+                                                    <Span Text="{Binding TISINSTRUCAO}" Style="{StaticResource TitlePrimary}" />
+                                                    <!--<Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />
                                                     <Span Text=" - "  Style="{StaticResource Horario}" />
                                                     <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />-->
                                                     </FormattedString>
@@ -107,7 +109,9 @@
 
                         <!--<Button Text="+" Clicked="BtnCadastrar" Style="{StaticResource BotaoArredondado}"/>-->
                     </Grid>
+                    </ScrollView>
                 </Frame>
+               
             </Grid>
         </StackLayout>
     </ContentPage.Content>

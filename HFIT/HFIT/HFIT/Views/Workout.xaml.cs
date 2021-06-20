@@ -102,7 +102,7 @@ namespace HFIT.Views
             {
                 respostaTreino = await _service.GetWorkout(1, App.Current.Properties["MyToken"].ToString());
 
-
+                
                 for (var i = 0; i < respostaTreino.Data.Count; i++)
                 {
                     treino.Add(respostaTreino.Data[i]);
@@ -110,6 +110,7 @@ namespace HFIT.Views
 
                 Lista = new ObservableCollection<TreinoModel>(treino);
 
+                txtWorkout.Text = Lista[0].TRENOME.ToString();
 
                 CVListaDeTarefas.ItemsSource = Lista;
 
