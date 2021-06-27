@@ -9,9 +9,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout  
-                      >
-
+        <StackLayout>
             <Grid  >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50" />
@@ -56,9 +54,9 @@
                         </Label.FormattedText>
                     </Label>
                     <Frame Grid.Column="1" WidthRequest="{OnPlatform UWP=75}" HeightRequest="{OnPlatform UWP=75}" HorizontalOptions="{OnPlatform UWP=End}" VerticalOptions="{OnPlatform UWP=Center}" Margin="10, 20, 20, 0" BackgroundColor="{StaticResource LightBlue}" CornerRadius="20" HasShadow="False">
-                        <Frame.GestureRecognizers>
+                        <!--<Frame.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OpenDetails" />
-                        </Frame.GestureRecognizers>
+                        </Frame.GestureRecognizers>-->
                         <Label x:Name ="DiaDaSemana"  Style="{StaticResource TextSecondary}" FontSize="10"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     </Frame>
                 </Grid>
@@ -84,9 +82,9 @@
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
-                                            <CheckBox Color="{StaticResource Green}" IsChecked="True"  CheckedChanged="CheckedChangedAction" />
+                                            <CheckBox Color="{StaticResource Green}" IsChecked="{Binding TISCONCLUIDO}"  CheckedChanged="CheckedChangedAction" />
                                             <!--<Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">-->
-                                            <Label x:Name="LblTarefaDetalhe" Text="{Binding TRENOME}" Grid.Column="1" LineHeight="1.2">
+                                            <Label x:Name="LblExercicioDetalhe" Text="{Binding TRENOME}" Grid.Column="1" LineHeight="1.2">
                                                     <Label.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="BtnViews" CommandParameter="{Binding .}" />
                                                 </Label.GestureRecognizers>

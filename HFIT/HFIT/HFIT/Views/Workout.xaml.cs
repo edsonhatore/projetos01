@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Webkit;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace HFIT.Views
         
             UserLogado = user;
 
-            AtualizarDataCalendario();
+            AtualizarListaExercicio();
 
             var idioma = System.Globalization.CultureInfo.CurrentCulture;
 
@@ -87,7 +88,7 @@ namespace HFIT.Views
         }
 
 
-        private async void AtualizarDataCalendario()
+        private async void AtualizarListaExercicio()
         {
 
             ///pedndente chamar api 
@@ -95,24 +96,29 @@ namespace HFIT.Views
             var treino = new List<TreinoModel>();
             var respostaTreino = new Message<List<TreinoModel>>();
 
-
-
-            //      await Navigation.PushPopupAsync(new Loading());
             try
             {
-                respostaTreino = await _service.GetWorkout(1, App.Current.Properties["MyToken"].ToString());
+                respostaTreino = await _service.GetWorkout(UserLogado.Cpocodigo , UserLogado.Id, App.Current.Properties["MyToken"].ToString());
 
-                
-                for (var i = 0; i < respostaTreino.Data.Count; i++)
+                if (respostaTreino.IsSuccess == true)
                 {
-                    treino.Add(respostaTreino.Data[i]);
+                    for (var i = 0; i < respostaTreino.Data.Count; i++)
+                    {
+                        treino.Add(respostaTreino.Data[i]);
+                    }
+
+                    Lista = new ObservableCollection<TreinoModel>(treino);
+
+                    txtWorkout.Text = Lista[0].TRENOME.ToString();
+
+                    CVListaDeTarefas.ItemsSource = Lista;
                 }
+                else
+                {
 
-                Lista = new ObservableCollection<TreinoModel>(treino);
+                    await DisplayAlert("Aviso!", respostaTreino.ReturnMessage, "OK");
 
-                txtWorkout.Text = Lista[0].TRENOME.ToString();
-
-                CVListaDeTarefas.ItemsSource = Lista;
+                }
 
             }
             catch (Exception ex)
@@ -165,13 +171,44 @@ namespace HFIT.Views
             //}
         }
 
-            private void CheckedChangedAction(object sender, CheckedChangedEventArgs e)
+        private async void CheckedChangedAction(object sender, CheckedChangedEventArgs e)
         {
+          
+            var checkbox = (CheckBox)sender;
 
+            var label = checkbox.Parent.FindByName<Label>("LblExercicioDetalhe");
+            var tapGesture =(TapGestureRecognizer) label.GestureRecognizers[0];
+            var TreinoEvento =(TreinoModel) tapGesture.CommandParameter;
+
+           // var ob = (TreinoModel)checkbox.BindingContext;
+
+            if (TreinoEvento != null)
+            {
+
+                //var treino = new List<TreinoSerieModel>();
+                var respostaTreinoserie = new Message<List<TreinoSerieModel>>();
+                try
+                {
+                    respostaTreinoserie = await _service.SetStatusWorkoutSerie(TreinoEvento.TRECODIGO, TreinoEvento.EXECODIGO, App.Current.Properties["MyToken"].ToString());
+
+                                      
+                }
+                catch (Exception ex)
+                {
+
+                    throw;
+
+                }
+
+            }
         }
 
         private void BtnViews(object sender, EventArgs e)
         {
+            //var evento = (TappedEventArgs)e;
+            //var exercicio = (TreinoModel)evento.Parameter;
+
+
             Navigation.PushAsync(new WorkoutDetails());
         }
 

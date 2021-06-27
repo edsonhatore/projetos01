@@ -36,3 +36,6 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\obj\Debug\netstandard2.0\HFIT.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\obj\Debug\netstandard2.0\ref\HFIT.dll
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\obj\Debug\netstandard2.0\HFIT.pdb
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\obj\Debug\netstandard2.0\HFIT.csprojAssemblyReference.cache
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT\bin\Debug\netstandard2.0\Mono.Android.xml
