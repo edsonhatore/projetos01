@@ -51,7 +51,8 @@ namespace HFIT.Views
 
                     if (respostaUser.IsSuccess)
                     {
-                        App.Current.MainPage = new NavigationPage(new Workout(user));
+                        //App.Current.MainPage = new NavigationPage(new Workout(user));
+                        App.Current.MainPage = new NavigationPage(new GridMenu(user));
                     }
                     else
                     {

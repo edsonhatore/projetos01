@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HFIT.Views.GridMenu">
+    <ContentPage.Content>
+         <StackLayout>
+            <StackLayout>
+                <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>
+                <Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />
+                <Label Text="HFIT" Style="{StaticResource Title}" Grid.Column="1"></Label>
+
+            </Grid>
+            </StackLayout>
+                    <BoxView  Color="#D7CCFF" HeightRequest="1"/>
+            <Grid x:Name="gridListaTreino">
+             </Grid>
+            <Grid VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="5,5,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    
+                </Grid.RowDefinitions>
+                <Button Text="1" x:Name="btnTreinoA" Grid.Row="0" Grid.Column="0" Clicked="GoTreinoA" />
+                <Button Text="2"  x:Name="btnTreinoB" Grid.Row="0" Grid.Column="1"/>
+                <Button Text="3"  x:Name="btnTreinoC" Grid.Row="1" Grid.Column="0"/>
+                <Button Text="4"  x:Name="btnTreinoD" Grid.Row="1" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

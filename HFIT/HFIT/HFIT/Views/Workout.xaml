@@ -19,8 +19,8 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"></RowDefinition>
                 </Grid.RowDefinitions>
-                <!--<ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>-->
-                <Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />
+                 <!--<Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />-->
+                <ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>
                 <Label Text="HFIT-Sonian" Style="{StaticResource Title}" Grid.Column="1"></Label>
             </Grid>
 

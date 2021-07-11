@@ -21,15 +21,17 @@ namespace HFIT.Views
 
         private Services.WorkoutService _service;
         public UsersModel UserLogado { get; set; }
+        public TreinoModel TreinoSelecionado { get; set; }
 
-    
 
-        public Workout(UsersModel user)
+
+        public Workout(UsersModel user, TreinoModel Treinoselecionado)
         {
             InitializeComponent();
-            _service = new Services.WorkoutService();
+                _service = new Services.WorkoutService();
         
-            UserLogado = user;
+                UserLogado = user;
+            TreinoSelecionado = Treinoselecionado;
 
             AtualizarListaExercicio();
 
@@ -97,7 +99,8 @@ namespace HFIT.Views
             var respostaTreino = new Message<List<TreinoModel>>();
 
             try
-            {
+            { // TreinoSelecionado
+
                 respostaTreino = await _service.GetWorkout(UserLogado.Cpocodigo , UserLogado.Id, App.Current.Properties["MyToken"].ToString());
 
                 if (respostaTreino.IsSuccess == true)
@@ -213,13 +216,18 @@ namespace HFIT.Views
         }
 
 
-        private void Logout(object sender, EventArgs e)
+        //private void Logout(object sender, EventArgs e)
+        //{
+        //    App.Current.Properties.Remove("MyToken");
+        //    App.Current.SavePropertiesAsync();
+
+        //       Navigation.PushAsync(new Login());
+           
+        //}
+
+        private void GoBack(object sender, EventArgs e)
         {
-            App.Current.Properties.Remove("MyToken");
-            App.Current.SavePropertiesAsync();
-
-            Navigation.PushAsync(new Login());
-
+            Navigation.PushAsync(new GridMenu(UserLogado));
         }
     }
 }
