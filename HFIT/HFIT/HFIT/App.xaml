@@ -25,14 +25,6 @@
                 <Setter Property="TextColor" Value="{StaticResource LightBlue}"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
-
-            <Style TargetType="Frame" Class="EntryFrame" >
-                <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
-                <Setter Property="Padding" Value="10,0"/>
-                <Setter Property="CornerRadius" Value="5"/>
-                <Setter Property="HasShadow" Value="False"/>
-            </Style>
-
             <Style x:Key="Date" TargetType="Label">
                 <Setter Property="TextColor" Value="{StaticResource White}" />
                 <Setter Property="FontFamily" Value="Montserratight" />
@@ -74,7 +66,31 @@
                 </Setter>
 
             </Style>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                <Setter Property="Padding">
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="15, 15, 15, 0" />
+                        <On Platform="iOS" Value="15, 35, 15, 0" />
+                        <On Platform="UWP" Value="15, 15, 15, 0" />
+                    </OnPlatform>
+                </Setter>
+                <Setter Property="NavigationPage.HasNavigationBar" Value="false"/>
+            </Style>
 
+            <Style TargetType="Frame" Class="EntryFrame">
+                <Setter Property="BackgroundColor" Value="{StaticResource White}" />
+                <Setter Property="Padding">
+                    <OnPlatform x:TypeArguments="Thickness">
+                        <On Platform="Android" Value="10, 0" />
+                        <On Platform="iOS" Value="10" />
+                        <On Platform="UWP" Value="10, 0" />
+                    </OnPlatform>
+                </Setter>
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="HasShadow" Value="False" />
+                <Setter Property="Margin" Value="10,3" />
+            </Style>
 
             <Style TargetType="Label" x:Key="TextSecondary" BasedOn="{StaticResource BaseLabel}">
                 <Setter Property="TextColor" Value="{StaticResource Gray}" />
@@ -83,7 +99,7 @@
                 <Setter Property="TextColor" Value="{StaticResource DarkGray}" />
             </Style>
             <Style TargetType="Label" x:Key="TitlePrimary" BasedOn="{StaticResource BaseLabel}">
-                <Setter Property="TextColor" Value="{StaticResource LightBlue}" />
+                <Setter Property="TextColor" Value="{StaticResource Black}" />
             </Style>
 
         </ResourceDictionary>

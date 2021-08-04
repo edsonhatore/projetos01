@@ -99,9 +99,10 @@ namespace HFIT.Views
             var respostaTreino = new Message<List<TreinoModel>>();
 
             try
-            { // TreinoSelecionado
+            {
+                respostaTreino = await _service.GetWorkoutById(UserLogado.Cpocodigo, UserLogado.Id, TreinoSelecionado.TRECODIGO, App.Current.Properties["MyToken"].ToString());
 
-                respostaTreino = await _service.GetWorkout(UserLogado.Cpocodigo , UserLogado.Id, App.Current.Properties["MyToken"].ToString());
+                
 
                 if (respostaTreino.IsSuccess == true)
                 {
@@ -227,7 +228,9 @@ namespace HFIT.Views
 
         private void GoBack(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new GridMenu(UserLogado));
+         //  Navigation.PushAsync(new GridMenu(UserLogado));
+         //
+           Navigation.PopAsync();
         }
     }
 }

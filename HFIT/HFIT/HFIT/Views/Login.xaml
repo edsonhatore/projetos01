@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="HFIT.Views.Login">
     <ContentPage.Content>
         <!--<Frame  BackgroundColor="{StaticResource LightBlue}" CornerRadius="10" Margin="30" HasShadow="true" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">-->
         <StackLayout  BackgroundColor="{StaticResource LightBlue}">
-                <Label Text="HFIT-Sonian" Style="{StaticResource  Date}" Margin="15"></Label>
+            <Label Text="HFIT-Sonian" Style="{StaticResource  Date}"></Label>
                 <BoxView  Color="#D7CCFF" HeightRequest="1"/>
-                <Image/>
+                <!--<Image/>-->
                 <Grid VerticalOptions="CenterAndExpand">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -19,14 +22,14 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
               
-                <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2" >
+                <Frame StyleClass="EntryFrame" Grid.Row="0" Grid.ColumnSpan="2"  >
                     <Entry x:Name ="txtEmail" Placeholder="E-mail"  Text ="teste@teste22"  ReturnType="Next"/>
                     </Frame>
                     <Frame StyleClass="EntryFrame" Grid.Row="1" Grid.ColumnSpan="2"  >
                         <Entry x:Name="txtPassword" Placeholder="Senha" Text="1" IsPassword="True" ReturnType="Done" />
                     </Frame>               
-                    <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource DarkGrayBlue}"  CornerRadius="10"  TextColor="#FFFFFF"/>
-                    <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource DarkGrayBlue}" FontSize="12"  CornerRadius="10"   TextColor="#FFFFFF"/>
+                    <Button Text="Acessar"  Clicked="GoWorkout" Grid.Row="2" BackgroundColor="{StaticResource DarkGrayBlue}"  CornerRadius="10" Margin="10,2"  TextColor="#FFFFFF"/>
+                <Button Text="Lembar Senha" Clicked="GoRemenber" Grid.Row="2" Grid.Column="1" BackgroundColor="{StaticResource DarkGrayBlue}" FontSize="12"  Margin="10,2"   CornerRadius="10"   TextColor="#FFFFFF"/>
                 <ActivityIndicator  x:Name="ActiveLoading" HorizontalOptions="Center" VerticalOptions="Center"></ActivityIndicator>
             </Grid>
 

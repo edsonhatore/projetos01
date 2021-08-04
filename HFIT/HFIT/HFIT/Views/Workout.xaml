@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-               xmlns:conversor="clr-namespace:HFIT.Converter"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:conversor="clr-namespace:HFIT.Converter"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
              x:Class="HFIT.Views.Workout">
     <ContentPage.Resources>
         <ResourceDictionary>
             <conversor:TachadoConversor x:Key="Tachado" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ContentPage.Content>
-        <StackLayout>
-            <Grid  >
+    <ContentPage.Content  >
+        <StackLayout BackgroundColor="{StaticResource  Gray}">
+            <Grid VerticalOptions="Start">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="50" />
                     <ColumnDefinition/>
@@ -19,15 +22,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"></RowDefinition>
                 </Grid.RowDefinitions>
-                 <!--<Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />-->
+                <!--<Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />-->
                 <ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>
                 <Label Text="HFIT-Sonian" Style="{StaticResource Title}" Grid.Column="1"></Label>
             </Grid>
-
             <BoxView  Color="#D7CCFF" HeightRequest="1"/>
-
             <Grid RowSpacing="0" >
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
@@ -35,7 +35,6 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="5*"/>
                 </Grid.RowDefinitions>
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
@@ -60,17 +59,16 @@
                         <Label x:Name ="DiaDaSemana"  Style="{StaticResource TextSecondary}" FontSize="10"  VerticalOptions="Center" HorizontalOptions="Center"></Label>
                     </Frame>
                 </Grid>
-               
-                    <Frame HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
+                <Frame StyleClass="EntryFrame" HasShadow="False" CornerRadius="30" TranslationY="30" Grid.Row="1">
                     <ScrollView>
                         <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition />
-                        </Grid.RowDefinitions>
-                        <CollectionView x:Name="CVListaDeTarefas" EmptyView="Nenhuma tarefa">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <!--<SwipeView BackgroundColor="White">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <CollectionView x:Name="CVListaDeTarefas" EmptyView="Nenhuma tarefa">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <!--<SwipeView BackgroundColor="White">
                                         <SwipeView.RightItems>
                                             <SwipeItems>
                                                 <SwipeItem BackgroundColor="#EE6C4D" Text="Concluir" Invoked="BtnDone" CommandParameter="{Binding .}" />
@@ -78,40 +76,41 @@
                                         </SwipeView.RightItems>-->
                                         <Grid Padding="0, 10">
                                             <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="30" />
                                                 <ColumnDefinition Width="50" />
                                                 <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
-                                            <CheckBox Color="{StaticResource Green}" IsChecked="{Binding TISCONCLUIDO}"  CheckedChanged="CheckedChangedAction" />
+                                            <CheckBox Color="{StaticResource  DarkGray}" IsChecked="{Binding TISCONCLUIDO}"  CheckedChanged="CheckedChangedAction" />
                                             <!--<Label x:Name="LblTarefaDetalhe" TextDecorations="{Binding Finalizada, Converter={StaticResource Tachado}}" Grid.Column="1" LineHeight="1.2">-->
-                                            <Label x:Name="LblExercicioDetalhe" Text="{Binding TRENOME}" Grid.Column="1" LineHeight="1.2">
-                                                    <Label.GestureRecognizers>
+                                            <Image Source="http://192.168.15.5/edson/Imagens/hfit/teste.png" WidthRequest="80" HeightRequest="80"  Grid.Column="1" ></Image>
+                                            <Label x:Name="LblExercicioDetalhe" Text="{Binding TRENOME}" Grid.Column="2" LineHeight="1.2">
+                                                <Label.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="BtnViews" CommandParameter="{Binding .}" />
                                                 </Label.GestureRecognizers>
                                                 <Label.FormattedText>
                                                     <FormattedString>
                                                         <Span Text="{Binding EXENOME}" Style="{StaticResource TitlePrimary}" />
                                                         <Span Text="&#10;" />
-                                                    <Span Text="{Binding TISINSTRUCAO}" Style="{StaticResource TitlePrimary}" />
-                                                    <!--<Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />
+                                                        <Span Text="{Binding TISINSTRUCAO}" Style="{StaticResource TitlePrimary}" />
+                                                        <!--<Span Text="{Binding HorarioInicial, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />
                                                     <Span Text=" - "  Style="{StaticResource Horario}" />
                                                     <Span Text="{Binding HorarioFinal, StringFormat=\{0:hh\\:mm\}}" Style="{StaticResource Horario}" />-->
                                                     </FormattedString>
                                                 </Label.FormattedText>
                                             </Label>
                                         </Grid>
-                                    <!--</SwipeView>-->
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
+                                        <!--</SwipeView>-->
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
 
-                        <!--<Button Text="+" Clicked="BtnCadastrar" Style="{StaticResource BotaoArredondado}"/>-->
-                    </Grid>
+                            <!--<Button Text="+" Clicked="BtnCadastrar" Style="{StaticResource BotaoArredondado}"/>-->
+                        </Grid>
                     </ScrollView>
                 </Frame>
-               
+
             </Grid>
         </StackLayout>
     </ContentPage.Content>
-
 </ContentPage>

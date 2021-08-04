@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HFIT.Views.GridMenu">
     <ContentPage.Content>
-         <StackLayout>
+        <StackLayout BackgroundColor="{StaticResource LightBlue}" >
             <StackLayout>
                 <Grid >
                 <Grid.ColumnDefinitions>
@@ -16,8 +16,7 @@
                 </Grid.RowDefinitions>
                 <ImageButton  Style="{StaticResource BackButton}" Clicked="GoBack" Grid.Column="0"/>
                 <Button Grid.Column="0" ImageSource="logout.png" Clicked="Logout" StyleClass="AddButton" />
-                <Label Text="HFIT" Style="{StaticResource Title}" Grid.Column="1"></Label>
-
+                    <Label Text="HFIT-Sonian" Style="{StaticResource Title}"  TextColor="White" Grid.Column="1"></Label>
             </Grid>
             </StackLayout>
                     <BoxView  Color="#D7CCFF" HeightRequest="1"/>
@@ -35,13 +34,17 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    
+                  
+
                 </Grid.RowDefinitions>
-                <Button Text="1" x:Name="btnTreinoA" Grid.Row="0" Grid.Column="0" Clicked="GoTreinoA" />
-                <Button Text="2"  x:Name="btnTreinoB" Grid.Row="0" Grid.Column="1"/>
-                <Button Text="3"  x:Name="btnTreinoC" Grid.Row="1" Grid.Column="0"/>
-                <Button Text="4"  x:Name="btnTreinoD" Grid.Row="1" Grid.Column="1"/>
+                <Button Text="1" x:Name="btnTreinoA" Grid.Row="0" Grid.Column="0" Clicked="GoTreinoA"  FontSize="25"/>
+                <Button Text="2"  x:Name="btnTreinoB" Grid.Row="0" Grid.Column="1" Clicked="GoTreinoB" FontSize="25"/>
+                <Button Text="3"  x:Name="btnTreinoC" Grid.Row="1" Grid.Column="0" Clicked="GoTreinoC" FontSize="25"/>
+                <Button Text="4"  x:Name="btnTreinoD" Grid.Row="1" Grid.Column="1" Clicked ="GoTreinoD" FontSize="25"/>
+                <Button Text="5"  x:Name="btnTreinoE" Grid.Row="2" Grid.Column="0" Clicked ="GoTreinoE" FontSize="25"/>
+                <Button Text="6"  x:Name="btnTreinoF" Grid.Row="2" Grid.Column="1" Clicked ="GoTreinoE" FontSize="25"/>
             </Grid>
+            <!--</StackLayout>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

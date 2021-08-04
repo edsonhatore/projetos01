@@ -20,7 +20,7 @@
             <BoxView  Color="#D7CCFF" HeightRequest="1"/>
             <ScrollView>
                 <StackLayout>
-                    <Frame>
+                    <Frame StyleClass="EntryFrame" >
                         <Label  Style="{StaticResource Title}" >
                             <Label.FormattedText >
                                 <FormattedString>

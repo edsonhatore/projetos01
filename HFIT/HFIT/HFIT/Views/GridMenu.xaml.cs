@@ -51,7 +51,6 @@ namespace HFIT.Views
 
           //  var treino = new List<TreinoModel>();
             var respostaTreino = new Message<List<TreinoModel>>();
-
          //   try
            // { // TreinoSelecionado
 
@@ -70,10 +69,20 @@ namespace HFIT.Views
                 foreach (var item in TreinoDistint)
                 {
 
-
-                    btnTreinoA.Text = item.TRENOME;
-                    
-
+                    if(item.TRECODIGO==2)
+                         btnTreinoA.Text = item.TRENOME;
+                    if (item.TRECODIGO == 3)
+                        btnTreinoB.Text = item.TRENOME;
+                    if (item.TRECODIGO == 4)
+                        btnTreinoC.Text = item.TRENOME;
+                    if (item.TRECODIGO == 5)
+                        btnTreinoD.Text = item.TRENOME;
+                    if (item.TRECODIGO == 6)
+                        btnTreinoE.Text = item.TRENOME;
+                    if( item.TRECODIGO == 7)
+                       btnTreinoE.Text = item.TRENOME;
+                    //if (item.TRENOME == "F")
+                    //    btnTreinoF.Text = item.TRENOME;
                 }
                 // dinamico 
 
@@ -114,16 +123,14 @@ namespace HFIT.Views
            // Navigation.PopAsync();
         }
 
+       
+
         private void GoTreinoA(object sender, EventArgs e)
         {
-            TreinoModel treinoselect;
-            treinoselect = new TreinoModel();
 
-            treinoselect.TRECODIGO = 2;//treino A
+            GoTreinoSelected(2);
 
-           // App.Current.MainPage = new NavigationPage(new Workout(UserLogado, treinoselect));
-            Navigation.PushAsync(new NavigationPage(new Workout(UserLogado, treinoselect)));
-            //    App.Current.MainPage = new NavigationPage(new Workout(user));
+            //    App.Current.MainPage = new NavigationPage(new Workout(user));????????????
         }
 
         private void Logout(object sender, EventArgs e)
@@ -133,6 +140,45 @@ namespace HFIT.Views
 
             Navigation.PushAsync(new Login());
           
+        }
+
+        private void GoTreinoB(object sender, EventArgs e)
+        {
+            GoTreinoSelected(3);
+
+            //    App.Current.MainPage = new NavigationPage(new Workout(user));
+        }
+
+        private void GoTreinoC(object sender, EventArgs e)
+        {
+
+            GoTreinoSelected(4);
+        }
+                private void GoTreinoD(object sender, EventArgs e)
+        {
+            //TreinoModel treinoselect;
+            //treinoselect = new TreinoModel();
+
+            //treinoselect.TRECODIGO = 5;//treino 
+            //Navigation.PushAsync(new Workout(UserLogado, treinoselect));
+
+            GoTreinoSelected(5);
+        }
+
+        private void GoTreinoSelected(Int32 vTreino)
+        {
+            TreinoModel treinoselect;
+            treinoselect = new TreinoModel();
+
+            treinoselect.TRECODIGO = vTreino;
+
+            Navigation.PushAsync(new Workout(UserLogado, treinoselect));
+
+        }
+
+        private void GoTreinoE(object sender, EventArgs e)
+        {
+            GoTreinoSelected(6);
         }
     }
 }

@@ -1076,3 +1076,4 @@ C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_ConvertReso
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\DEV\APPHFIT\projetos01\HFIT\HFIT\HFIT.Android\obj\Debug\90\res\drawable\teste.png
